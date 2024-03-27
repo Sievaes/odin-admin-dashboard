@@ -12,8 +12,8 @@
     --sidebar-color: rgb(18, 95, 189);
     --sidebar-font-color: white;
     --sidebar-hover-color: chocolate;
-    --card-area: lightblue;
-    --card-color: white;
+    --card-area: rgba(231, 229, 229, 0.76);
+    --card-color: rgba(211, 213, 189, 0.493);
 }
 
 body {
@@ -48,6 +48,7 @@ body {
     grid-row: 1 / 2;
     display: grid;
     grid-template-rows: 1fr 1fr;
+    
 }
 
 .header-top {
@@ -61,55 +62,96 @@ body {
 
 
 .header-bottom {
+    display: grid;
     box-shadow: 0 4px 2px -2px gray;
     margin-left: -10px;
     margin-right: -10px;
+    grid-template: 1fr / 1fr 5fr 4fr;
+    padding: 0;
+    box-shadow: 0px 15px 15px -15px;
+    margin: 0px -25px 3px -25px;
+}
+
+.header-bottom-left {
+    grid-column: 2 / 3;
+}
+
+.header-bottom-right {
+    grid-column: 3 / 4;
+    justify-self: center;
+    align-self: center;
+}
+
+.main-content {
+    display: flex;
+}
+
+.main-content-left {
+    background-color: var(--card-area);
+    justify-self: center;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template: 50px 100px / repeat(minmax(250px, 1fr));
 
 }
 
-
-.main-content {
+.main-content-right {
     background-color: var(--card-area);
-    justify-self: center;
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
     display: grid;
-    grid-template: 50px auto / minmax(300px, 1fr) minmax(300px, 1fr) minmax(300px, 1fr);
-    gap: 10px;
-    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+    grid-template: 50px 400px 50px 400px / minmax(400px, 1fr);
 }
 
 .main-content-header {
     grid-column: 1 / 3;
-    align-self: self-end;
-    margin-left: 10px;
+}
+
+.announcements-header {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
 }
 
 .announcements-module {
-    grid-column: 3 / 4;
-    grid-row: 1 / 4;
-    text-align: left;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.trending-header {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
 
 }
 
+h3 {
+    margin-left: 15px;
+}
+
 .trending-module {
-    grid-column: 3 / 4;
-    grid-row: 4 / 9;
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
 }
 
 .cards {
     background-color: var(--card-color);
     border-radius: 10px;
-    margin: 10px;
+    margin: 20px;
     padding: 20px;
     font-family: "roboto-regular";
+    box-shadow: 0 0 5px 0;
+
+}
+
+.cards:hover {
+    background-color: var(--sidebar-hover-color);
 }
 
 input {
-    width: 350px;
-    height: 18px;
+    width: 500px;
+    height: 25px;
     border-radius: 30px;
-    margin-right: 100px;
+    margin-right: 600px;
+    background-color: var(--card-area);
 }
 
 a, li {
@@ -128,4 +170,20 @@ a:hover {
 .icons {
     width: 20px;
     margin-right: 10px;
+}
+
+.buttons {
+    background-color: var(--sidebar-color);
+    color: var(--sidebar-font-color);
+    font-family: "roboto-bold";
+    border: 0;
+    font-size: 16px;
+    border-radius: 25px;
+    margin-left: 30px;
+    width: 120px;
+    height: 40px;
+}
+
+.buttons:hover {
+    background-color: var(--sidebar-hover-color);
 }
